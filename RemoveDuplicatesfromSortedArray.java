@@ -32,7 +32,7 @@ arr[j] = arr[i];
 
     public static void main(String args[]){
 
-        int nums[] = {0,1,2,3,3,4,5};
+        int nums[] = {0,0,1,1,1,2,2,3,3,4};
         
         removeDuplicates(nums);
 
@@ -42,16 +42,15 @@ arr[j] = arr[i];
     }
     
         public static int removeDuplicates(int[] nums) {
-           
-            int i  =0;
-
-            for(int  j = 1; j < nums.length;j++){
+            
+            int j=1;
+            for(int i=1;i<nums.length;i++){
     
-                if(nums[j] != nums[i]){
-                    nums[i+1] = nums[j];
-                    i++;
+                if(nums[i]!=nums[j-1]){
+                    nums[j]=nums[i];
+                    j++;
                 }
-            }
-            return i+1;
         }
+        return j;
     }
+ }
